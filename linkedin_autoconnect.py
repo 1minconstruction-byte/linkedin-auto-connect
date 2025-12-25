@@ -6,6 +6,7 @@ Use responsibly and in accordance with LinkedIn's terms of service.
 import time
 import logging
 import sys
+from urllib.parse import quote_plus
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -103,10 +104,10 @@ class LinkedInAutoConnect:
         """Navigate to people search with specified criteria."""
         logger.info(f"Searching for: {config.SEARCH_KEYWORD} in {config.SEARCH_LOCATION}")
         
-        # Build search URL
+        # Build search URL with proper URL encoding
         search_url = (
             f"{config.LINKEDIN_SEARCH_URL}"
-            f"?keywords={config.SEARCH_KEYWORD.replace(' ', '%20')}"
+            f"?keywords={quote_plus(config.SEARCH_KEYWORD)}"
             f"&origin=SWITCH_SEARCH_VERTICAL"
         )
         
@@ -170,7 +171,7 @@ class LinkedInAutoConnect:
                                 By.XPATH, "//button[@aria-label='Dismiss']"
                             )
                             close_button.click()
-                        except:
+                        except Exception:
                             pass
                         
                 except ElementClickInterceptedException:
