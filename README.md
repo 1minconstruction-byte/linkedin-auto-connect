@@ -64,9 +64,11 @@ Edit the `.env` file to customize the bot's behavior:
 | `LINKEDIN_PASSWORD` | Your LinkedIn password | (required) |
 | `MAX_INVITES_PER_DAY` | Maximum connection requests per run | 50 |
 | `SEARCH_KEYWORD` | Search term for finding people | Software Engineer |
-| `SEARCH_LOCATION` | Location filter for search | United States |
+| `SEARCH_LOCATION` | Location filter for search (currently informational only) | United States |
 | `HEADLESS_MODE` | Run browser in headless mode | False |
 | `BROWSER_WAIT_TIME` | Timeout for browser operations (seconds) | 5 |
+
+**Note:** Location filtering requires manual application on LinkedIn's search page after the script navigates there.
 
 ## Usage
 

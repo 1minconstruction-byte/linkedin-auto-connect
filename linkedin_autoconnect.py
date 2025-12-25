@@ -126,6 +126,7 @@ class LinkedInAutoConnect:
                 time.sleep(2)
             
             # Find all "Connect" buttons
+            # Note: XPath selectors may need updating if LinkedIn changes their UI
             connect_buttons = self.driver.find_elements(
                 By.XPATH, 
                 "//button[contains(@aria-label, 'Invite') or .//span[text()='Connect']]"
@@ -148,6 +149,7 @@ class LinkedInAutoConnect:
                     time.sleep(2)
                     
                     # Look for "Send without a note" or "Send" button in modal
+                    # Note: Button text/labels may vary across LinkedIn locales
                     try:
                         send_button = self.wait.until(
                             EC.element_to_be_clickable(
