@@ -54,6 +54,12 @@ SEARCH_KEYWORD=Software Engineer
 SEARCH_LOCATION=United States
 ```
 
+5. Verify your setup (optional):
+```bash
+python test_setup.py
+```
+
+
 ## Configuration
 
 Edit the `.env` file to customize the bot's behavior:
